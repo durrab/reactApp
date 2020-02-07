@@ -17,8 +17,16 @@ class App extends Component {
     console.log(`concated ${concat}`)
 
     let fruites = ["Apple", "Banana", "Orange", "Mango"];
-    fruites.copyWithin(3,1);
-    console.log(`checking fruites ${fruites}`)
+    //fruites.copyWithin(3,1);
+
+    
+    //fruites.shift()
+   // fruites.unshift("Durrab");
+
+    fruites.splice(2,0,"Lemon")
+    console.log(`checking fruites ${fruites.join(" * ")}`)
+
+
 
 
   }
