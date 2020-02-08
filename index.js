@@ -27,9 +27,42 @@ class App extends Component {
     fruites.splice(2,0,"Lemon")
     console.log(`checking fruites ${fruites.join(" * ")}`)
 
+    let result = this.twoSum([1,2,3,4,5],8);
+    console.log(`result ${result}`);
+
+    result = this.twoSumWithMap([1,2,3,4,5],6);
+    console.log(`result to map ${result}`)
 
 
+  }
 
+  twoSum(arr, target){
+
+    const map = {};
+
+    for(let item in arr){
+      let compliment = target - arr[item];
+      if(compliment in map){
+        return `${compliment} + ${arr[item]} = ${target}`;
+      }
+      map[arr[item]] = item;
+    }
+
+    return 'result not found'
+  }
+
+  twoSumWithMap(arr, target){
+    const map = new Map();
+    
+    for(let i=0; i < arr.length; i++){
+      const item = arr[i];
+      const compliment = target - arr[i];
+      if(map.has(compliment)){
+        return `${compliment} + ${item} = ${target}`;
+      }
+      map.set(item, i);
+    }
+    return `no result found!`
   }
 
   callMe = (name) => {
